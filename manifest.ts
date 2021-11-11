@@ -2,6 +2,9 @@
 import * as coda from '@codahq/packs-sdk';
 export const pack = coda.newPack();
 
+const fontfamily = "helvetica, 'helvetica neue', arial, verdana, sans-serif"
+const fontfamilytitles = "arial, 'helvetica neue', helvetica, sans-serif"
+
 pack.addFormula({
   name: 'ContentBlock',
   description: 'Generates HTML block code for content block types "h1", "h2", "title", "subtitle", "paragraph", "image", "avatar", "logo", "button", "spacer", "divider, or "wrapper".',
@@ -35,35 +38,35 @@ pack.addFormula({
     switch (contentType.toLowerCase()) {
       case 'h1':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <h3 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:32px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
+                        <h3 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:32px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
                          ${content}
                         </h3>
                        </td>`;
         break;
       case 'h2':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <h3 style="Margin:0;line-height:28px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
+                        <h3 style="Margin:0;line-height:28px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:24px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
                          ${content}
                         </h3>
                        </td>`;
         break;
       case 'title':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <h3 style="Margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:18px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
+                        <h3 style="Margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:18px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
                          <b>${content}</b>
                         </h3>
                        </td>`;
         break;
       case 'subtitle':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <p style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;font-style:normal;font-weight:normal;letter-spacing: 0.5px;color:#525252;margin-bottom:6px">
+                        <p style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:14px;font-style:normal;font-weight:normal;letter-spacing: 0.5px;color:#525252;margin-bottom:6px">
                          ${content.toUpperCase()}
                         </p>
                        </td>`;
         break;
       case 'paragraph':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#525252;font-size:16px;margin-bottom:6px">
+                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:${fontfamily};line-height:24px;color:#525252;font-size:16px;margin-bottom:6px">
                           ${content}
                         </p>
                        </td>`;
@@ -86,7 +89,7 @@ pack.addFormula({
       case 'button':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
                         <span class="es-button-border" style="border-style:solid;border-color:#282F33;background:#000000;border-width:1px;display:inline-block;border-radius:3px;width:auto">
-                          <a href="${link}" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#FFFFFF;font-size:14px;border-style:solid;border-color:#000000;border-width:12px 35px 12px 35px;display:inline-block;background:#000000;border-radius:3px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center">
+                          <a href="${link}" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#FFFFFF;font-size:14px;border-style:solid;border-color:#000000;border-width:12px 35px 12px 35px;display:inline-block;background:#000000;border-radius:3px;font-family:${fontfamily};font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center">
                             ${content}
                           </a>
                         </span>
@@ -156,13 +159,13 @@ pack.addFormula({
     let result = '';
     for(let i = 0; i < items.length; i++) { 
       if (!itemlinks || !itemlinks[i]) {
-        result += `                        <li style="margin-bottom:6px;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#525252;font-size:16px">
+        result += `                        <li style="margin-bottom:6px;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:${fontfamily};line-height:24px;color:#525252;font-size:16px">
                           ${items[i]}
                         </li>
 `;
       }
       else {
-        result += `                        <li style="margin-bottom:6px;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#525252;font-size:16px">
+        result += `                        <li style="margin-bottom:6px;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:${fontfamily};line-height:24px;color:#525252;font-size:16px">
                           <a target="_blank" href="${itemlinks[i]}" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#1251BA;font-size:16px">
                             ${items[i]}
                           </a>
@@ -284,7 +287,7 @@ ${datarows}                    </tr>
                <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                  <tr>
                   <td valign="top" align="center" style="padding-top:15px;padding-bottom:15px;Margin:0;width:530px;">
-                    <table width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;font-size:14px;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;background-color:#EEEEEE;border-radius:7px 7px 0px 0px;" cellpadding="6">
+                    <table width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;font-size:14px;font-family:${fontfamily};background-color:#EEEEEE;border-radius:7px 7px 0px 0px;" cellpadding="6">
                       <tr>
 ${labelsrow}                    </tr>
 ${datarowstack}                  </table>
@@ -321,7 +324,7 @@ pack.addFormula({
 
   execute: async function ([subject, content, footertext]) {
     return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="font-family:${fontfamily}">
  <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -414,7 +417,7 @@ pack.addFormula({
     }
   </style>
  </head>
- <body style="width:100%;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+ <body style="width:100%;font-family:${fontfamily};-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
   <div class="es-wrapper-color" style="background-color:#F9F9F9;padding:20px;">
    <!--[if gte mso 9]>
       <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
@@ -466,7 +469,7 @@ pack.addFormula({
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
                       <td align="center" style="padding:0;Margin:0">
-                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:18px;color:#B7B7B7;font-size:12px">
+                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:${fontfamily};line-height:18px;color:#B7B7B7;font-size:12px">
                           ${footertext}
                         </p></td>
                      </tr>
