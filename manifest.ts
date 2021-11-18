@@ -2,8 +2,9 @@
 import * as coda from '@codahq/packs-sdk';
 export const pack = coda.newPack();
 
-const fontfamily = "helvetica, 'helvetica neue', arial, verdana, sans-serif"
-const fontfamilytitles = "arial, 'helvetica neue', helvetica, sans-serif"
+const fontfamily = `helvetica, 'helvetica neue', arial, verdana, sans-serif`
+const fontfamilytitles = `arial, 'helvetica neue', helvetica, sans-serif`
+const msotablestyle = `mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px`
 
 pack.addFormula({
   name: 'ContentBlock',
@@ -97,7 +98,7 @@ pack.addFormula({
         break;
       case 'spacer':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px">
-                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="${msotablestyle}">
                          <tr>
                           <td style="padding:0;Margin:0;border-bottom:0px solid #ffffff;background:none;height:1px;width:100%;margin:0px"></td>
                          </tr>
@@ -106,7 +107,7 @@ pack.addFormula({
         break;
       case 'divider':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:25px;padding-bottom:40px;font-size:0px">
-                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="${msotablestyle}">
                          <tr>
                           <td style="padding:0;Margin:0;border-bottom:1px solid #dddddd;background:none;height:1px;width:100%;margin:0px"></td>
                          </tr>
@@ -122,10 +123,10 @@ pack.addFormula({
     }
     return `             <tr>
               <td align="left" style="padding:0;Margin:0;padding-left:30px;padding-right:30px">
-               <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+               <table width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle}">
                  <tr>
                   <td valign="top" align="center" style="padding:0;Margin:0;width:530px">
-                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="${msotablestyle}">
                      <tr>
                       ${body}
                      </tr>
@@ -175,10 +176,10 @@ pack.addFormula({
     }
     return `             <tr>
               <td align="left" style="padding:0;Margin:0;padding-left:30px;padding-right:30px">
-               <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+               <table width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle}">
                  <tr>
                   <td valign="top" align="center" style="padding:0;Margin:0;width:530px">
-                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="${msotablestyle}">
                      <tr>
                       <td align="left" style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:0px;padding-right:8px;font-size:0px">
                         <ul style="padding-left:10px;">
@@ -227,10 +228,10 @@ pack.addFormula({
     }
     return `             <tr>
               <td align="left" style="padding:0;Margin:0;padding-left:30px;padding-right:30px">
-               <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+               <table width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle}">
                  <tr>
                   <td valign="top" align="center" style="padding:0;Margin:0;width:530px">
-                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="${msotablestyle}">
                      <tr>
                       <td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;padding-left:0px;padding-right:8px;font-size:0px">
 ${result}                      </td>
@@ -284,10 +285,10 @@ ${datarows}                    </tr>
     }
     return `             <tr>
               <td align="left" style="padding:0;Margin:0;padding-left:30px;padding-right:30px">
-               <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+               <table width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle}">
                  <tr>
                   <td valign="top" align="center" style="padding-top:15px;padding-bottom:15px;Margin:0;width:530px;">
-                    <table width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;font-size:14px;font-family:${fontfamily};background-color:#EEEEEE;border-radius:7px 7px 0px 0px;" cellpadding="6">
+                    <table width="100%" style="${msotablestyle};font-size:14px;font-family:${fontfamily};background-color:#EEEEEE;border-radius:7px 7px 0px 0px;" cellpadding="6">
                       <tr>
 ${labelsrow}                    </tr>
 ${datarowstack}                  </table>
@@ -424,22 +425,22 @@ pack.addFormula({
         <v:fill type="tile" color="#f9f9f9" origin="0.5, 0" position="0.5, 0"></v:fill>
       </v:background>
     <![endif]-->
-   <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#F9F9F9">
+   <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle};padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#F9F9F9">
      <tr>
       <td valign="top" style="padding:0;Margin:0">
-       <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+       <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="${msotablestyle};table-layout:fixed !important;width:100%">
          <tr>
           <td align="center" style="padding:0;Margin:0">
-           <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:590px;border:1px solid #dddddd;">
+           <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="${msotablestyle};background-color:#FFFFFF;width:590px;border:1px solid #dddddd;">
              <tr>
               <td align="left" style="padding:0;Margin:0;padding-left:30px;padding-right:30px">
-               <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+               <table cellpadding="0" cellspacing="0" width="100%" style="${msotablestyle}">
                  <tr>
                   <td align="center" valign="top" style="padding:0;Margin:0;width:530px">
-                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="${msotablestyle}">
                      <tr>
                       <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px;font-size:0">
-                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="${msotablestyle}">
                          <tr>
                           <td style="padding:0;Margin:0;border-bottom:0px solid #ffffff;background:none;height:1px;width:100%;margin:0px"></td>
                          </tr>
@@ -457,16 +458,16 @@ pack.addFormula({
           </td>
          </tr>
        </table>
-       <table class="es-footer" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+       <table class="es-footer" cellspacing="0" cellpadding="0" align="center" style="${msotablestyle};table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
          <tr>
           <td align="center" style="padding:0;Margin:0">
-           <table class="es-footer-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:590px;border:0;">
+           <table class="es-footer-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="${msotablestyle};background-color:transparent;width:590px;border:0;">
              <tr>
               <td align="left" style="Margin:0;padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:20px">
-               <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+               <table cellpadding="0" cellspacing="0" width="100%" style="${msotablestyle}">
                  <tr>
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="${msotablestyle}">
                      <tr>
                       <td align="center" style="padding:0;Margin:0">
                         <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:${fontfamily};line-height:18px;color:#B7B7B7;font-size:12px">
