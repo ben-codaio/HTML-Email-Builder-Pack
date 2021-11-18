@@ -437,10 +437,10 @@ pack.addFormula({
                <table cellpadding="0" cellspacing="0" width="100%" style="${msotablestyle}">
                  <tr>
                   <td align="center" valign="top" style="padding:0;Margin:0;width:530px">
-                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="${msotablestyle}">
+                   <table cellpadding="0" cellspacing="0" width="100%" style="${msotablestyle}">
                      <tr>
                       <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px;font-size:0">
-                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="${msotablestyle}">
+                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="${msotablestyle}">
                          <tr>
                           <td style="padding:0;Margin:0;border-bottom:0px solid #ffffff;background:none;height:1px;width:100%;margin:0px"></td>
                          </tr>
