@@ -36,6 +36,7 @@ pack.addFormula({
 
   execute: async function ([contentType, content, link, alignment]) {
     let body = '';
+    let presentation = '';
     switch (contentType.toLowerCase()) {
       case 'h1':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
@@ -43,6 +44,7 @@ pack.addFormula({
                          ${content}
                         </h3>
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'h2':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
@@ -50,6 +52,7 @@ pack.addFormula({
                          ${content}
                         </h3>
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'title':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
@@ -57,6 +60,7 @@ pack.addFormula({
                          <b>${content}</b>
                         </h3>
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'subtitle':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
@@ -64,6 +68,7 @@ pack.addFormula({
                          ${content.toUpperCase()}
                         </p>
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'paragraph':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
@@ -71,21 +76,25 @@ pack.addFormula({
                           ${content}
                         </p>
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'image':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px">
                         <img class="adapt-img" src="${link}" alt="${content}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="530px">
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'avatar':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px">
                         <img src="${link}" alt="${content}" style="display:block;border:3px solid #ffffff;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-radius:50%;" width="128px">
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'logo':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px">
                         <img src="${link}" alt="${content}" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="68px" />
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'button':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
@@ -95,6 +104,7 @@ pack.addFormula({
                           </a>
                         </span>
                        </td>`;
+        presentation = `role="presentation"`;
         break;
       case 'spacer':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px">
@@ -119,14 +129,14 @@ pack.addFormula({
         break;
       default:
         console.log(`Unexpected contentType: ${contentType}`);
-        return 'Bad input';
+        return 'Please enter a valid content type';
     }
     return `             <tr>
               <td align="left" style="padding:0;Margin:0;padding-left:30px;padding-right:30px">
                <table width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle}">
                  <tr>
                   <td valign="top" align="center" style="padding:0;Margin:0;width:530px">
-                   <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="${msotablestyle}">
+                   <table width="100%" cellspacing="0" cellpadding="0" ${presentation} style="${msotablestyle}">
                      <tr>
                       ${body}
                      </tr>
