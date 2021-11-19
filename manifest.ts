@@ -98,7 +98,7 @@ pack.addFormula({
         break;
       case 'spacer':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px">
-                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="${msotablestyle}">
+                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="${msotablestyle}">
                          <tr>
                           <td style="padding:0;Margin:0;border-bottom:0px solid #ffffff;background:none;height:1px;width:100%;margin:0px"></td>
                          </tr>
@@ -107,7 +107,7 @@ pack.addFormula({
         break;
       case 'divider':
         body = `<td align="${alignment || 'center'}" style="Margin:0;padding-top:25px;padding-bottom:40px;font-size:0px">
-                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="${msotablestyle}">
+                       <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="${msotablestyle}">
                          <tr>
                           <td style="padding:0;Margin:0;border-bottom:1px solid #dddddd;background:none;height:1px;width:100%;margin:0px"></td>
                          </tr>
