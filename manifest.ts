@@ -298,7 +298,7 @@ ${datarows}                    </tr>
                <table width="100%" cellspacing="0" cellpadding="0" style="${msotablestyle}">
                  <tr>
                   <td valign="top" align="center" style="padding-top:15px;padding-bottom:15px;Margin:0;width:530px;">
-                    <table width="100%" style="${msotablestyle};font-size:14px;font-family:${fontfamily};background-color:#EEEEEE;border-radius:7px 7px 0px 0px;" cellpadding="6">
+                    <table width="100%" style="${msotablestyle};font-size:14px;font-family:${fontfamily};background-color:#EEEEEE;border-radius:7px 7px 0px 0px;" cellpadding="6" role="presentation">
                       <tr>
 ${labelsrow}                    </tr>
 ${datarowstack}                  </table>
