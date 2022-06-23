@@ -243,7 +243,7 @@ pack.addFormula({
                   <td valign="top" align="center" style="padding:0;Margin:0;width:530px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="${msotablestyle}">
                      <tr>
-                      <td align="${alignment || 'center'}" style="Margin:0;padding-top:15px;padding-bottom:15px;padding-left:0px;padding-right:8px;font-size:0px">
+                      <td align="${alignment || 'center'}" style="Margin:0;padding-top:0px;padding-bottom:10px;padding-left:0px;padding-right:8px;font-size:0px">
 ${result}                      </td>
                     </tr>
                    </table>
