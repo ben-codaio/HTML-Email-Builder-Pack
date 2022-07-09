@@ -40,17 +40,17 @@ pack.addFormula({
     switch (contentType.toLowerCase()) {
       case 'h1':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <h3 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:32px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
+                        <h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:32px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
                          ${content}
-                        </h3>
+                        </h1>
                        </td>`;
         presentation = `role="presentation"`;
         break;
       case 'h2':
         body = `<td align="${alignment || 'left'}" style="Margin:0;padding:0px;">
-                        <h3 style="Margin:0;line-height:28px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:24px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
+                        <h2 style="Margin:0;line-height:28px;mso-line-height-rule:exactly;font-family:${fontfamilytitles};font-size:24px;font-style:normal;font-weight:normal;color:#282F33;margin-bottom:7px">
                          ${content}
-                        </h3>
+                        </h2>
                        </td>`;
         presentation = `role="presentation"`;
         break;
